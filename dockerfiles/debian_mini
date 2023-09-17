@@ -1,6 +1,4 @@
 FROM --platform=i386 i386/alpine
-RUN wget -O henk.tar.gz https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Linux_32bit.tar.gz && \
-    tar -xzvf henk.tar.gz -C /bin && \
-    /bin/arduino-cli core install arduino:avr
-ENV ARDUINO_CLI_PATH=/bin/arduino-cli
+RUN apk add gcc-avr
+COPY ./examples /examples
 CMD [ "/bin/sh" ]
