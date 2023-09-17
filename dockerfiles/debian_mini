@@ -3,4 +3,4 @@ RUN wget -O henk.tar.gz https://downloads.arduino.cc/arduino-cli/arduino-cli_lat
     tar -xzvf henk.tar.gz -C /bin && \
     /bin/arduino-cli core install arduino:avr
 ENV ARDUINO_CLI_PATH=/bin/arduino-cli
-CMD [ "/bin/bash" ]
+CMD [ "/bin/sh" ]
