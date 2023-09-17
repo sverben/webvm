@@ -3,8 +3,4 @@ RUN wget -O henk.tar.gz https://downloads.arduino.cc/arduino-cli/arduino-cli_lat
     tar -xzvf henk.tar.gz -C /bin && \
     /bin/arduino-cli core install arduino:avr
 ENV ARDUINO_CLI_PATH=/bin/arduino-cli
-RUN useradd -m user && echo "user:password" | chpasswd
-# We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
-WORKDIR /home/user/
-RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
